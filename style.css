@@ -20,7 +20,7 @@ body {
 .header_buscador {
     display: flex;
     justify-content: space-around;
-    background-color:lightblue ;
+    background-color:#1E213A;
     padding: 20px;
 }
 
@@ -30,14 +30,15 @@ body {
 }
 
 .buttonP {
-
- border-radius: 50%; 
- padding: 4px;  
+width: 30px;
+height: 30px;
+border-radius: 50%; 
+padding: 4px;  
 }
 
 .header_output {
 
-    background-color: darkblue;
+    background-color: #100E1D;
     padding: 20px;
 }
 
@@ -72,7 +73,7 @@ margin-right: 20px;
 
 .buscador {
 
-background-color:lightblue ;
+background-color:#1E213A;
 background-image: url(./img-design/Cloud-background.png) ;
 background-repeat: no-repeat;
 background-position: 0% 15%;
@@ -87,7 +88,7 @@ align-items: center;
 
 .output {
 
-background-color: darkblue;
+background-color: #100E1D;
 
 }
 
@@ -99,9 +100,10 @@ flex-direction: column;
 }
 
 .buscador_output {
-/* display: flex;
-justify-content: center; */
 
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
 .buscador_output_number {
@@ -123,15 +125,21 @@ padding-top: 40px;
 .buscador_output_number_temp {
 
 font-size: 55px;
+color: white;
+font-weight: bold;
+}
 
+.buscador_output_number_unit {
+
+ color: white; 
+ padding-left: 10px;  
 }
 
 .buscador_output_weather {
 
 padding-top: 40px;
-
+color: white;
 }
-
 
 .output_data_week {
 
@@ -146,8 +154,9 @@ padding-top: 30px;
 display: flex;
 flex-direction: column;
 align-items: center;
-background-color: lightblue;
+background-color: #1E213A;
 padding: 10px 0px;
+color: white;
 }
 
 .output_day {
@@ -181,7 +190,8 @@ padding-top: 20px;
 .title {
 
 padding-top: 80px;  
-margin-left: 135px;  
+margin-left: 135px; 
+color: white; 
 }
 
 .output_data_day {
@@ -205,9 +215,9 @@ flex-direction: row;
     display: flex;
     flex-direction: column ;
     align-items: center;
-    background-color:lightblue ;
+    background-color:#1E213A;
     padding: 15px;
-
+    color: white;
 }
 
 .output_button_wind {
@@ -218,19 +228,41 @@ align-items: center;
 
 }
 
-.button_wind {
+.output_button_wind p {
+ 
+padding-left: 10px;
+}
 
+.button_wind {
+ width: 28px;
+ height: 28px;
  border-radius: 50%;
  padding: 5px;  
+ 
+}
 
+.output_number_day_number {
+
+color: white;
+padding: 5px;
+font-size: 40px;
+font-weight: bold;
+}
+
+.output_number_day_unit {
+
+color: white;
+padding: 5px;
+font-size: 30px;
 }
 
 .output_humidity {
     display: flex;
     flex-direction: column ;
     align-items: center;
-    background-color:lightblue ;
+    background-color:#1E213A;
     padding: 15px;
+    color: white;
 }
 
 .output_visibility {
@@ -238,16 +270,18 @@ align-items: center;
     display: flex;
     flex-direction: column ;
     align-items: center;
-    background-color:lightblue;
-    padding: 15px;  
+    background-color:#1E213A;
+    padding: 15px; 
+    color: white; 
 }
 
 .output_presure {
     display: flex;
     flex-direction: column ;
     align-items: center;
-    background-color:lightblue;
+    background-color:#1E213A;
     padding: 15px;
+    color: white;
 }
 
 
@@ -263,20 +297,26 @@ align-items: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color:lightblue ;
+    background-color: #1E213A;
 
 }
 
 .footer_output {
 
-    background-color: darkblue;
+    background-color: #100E1D;
 
 } 
+
+.footer_buscador_date {
+
+color: white;
+}
+
 
 .footer_buscador_place {
 
 padding-bottom: 20px;
-
+color: white;
 }
 
 .footer_output {
@@ -284,4 +324,49 @@ padding-bottom: 20px;
 display: flex;
 justify-content: center;
 align-items: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    .header {
+
+        display: grid;
+        grid-template-columns: 100%; 
+    }
+    
+  
+    .container {
+
+     /* display: flex;
+     flex-direction: column; */
+
+        display: grid;
+        grid-template-columns: 100%; 
+       
+    } 
+
+
+    .footer {
+
+        display: grid;
+        grid-template-columns: 100%; 
+    
+    }
+
+    .output_data_week {
+     display: grid;
+     grid-template-columns: 30% 30% ;
+     gap: 20px 20px;
+    }
+
+    .output_data_day {
+
+        display: grid;
+        grid-template-columns: 100% ;
+        grid-gap: 30px 10px; 
+        
+    }
+    
+
 }
