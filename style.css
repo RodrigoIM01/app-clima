@@ -5,35 +5,57 @@
     font-family: 'Raleway', sans-serif, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+:root {
+    --white-color: #E7E7EB;
+    --white-tranparent: rgba(255, 255, 255, 0.2);
+    --gray-text-color: #A09FB1;
+    --default-size-text: 12px;
+    --blue-color: #1E213A;
+    --hover-blue: #585676;
+    --shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);;
+}
+
 body {
     font-family: "Space Mono", Arial, sans-serif;
-    
+    color: var(--white-color);
+    font-size: var(--default-size-text);
 }
 
 .header {
-
     display: grid;
     grid-template-columns: 30% 70%; 
-
 }
 
 .header_buscador {
+    width: 100%;
     display: flex;
     justify-content: space-around;
-    background-color:#1E213A;
+    background-color:var(--blue-color);
     padding: 20px;
 }
 
 .buttonS {
-
- padding: 5px;
+    background-color: #6E707A;
+    padding: 5px 8px;
+    border: none;
+    text-align: center;
+    color: var(--white-color);
+    cursor: pointer;
+    box-shadow: var(--shadow);
 }
 
-.buttonP {
-width: 30px;
-height: 30px;
-border-radius: 50%; 
-padding: 4px;  
+.buttonGPS {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; 
+    padding: 18px;  
+    border: none;
+    background-color: var(--white-tranparent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--shadow);
 }
 
 .header_output {
@@ -50,39 +72,35 @@ padding: 4px;
 
 }
 
-.buttonC{
-
-border-radius: 50%;
-padding: 4px;
-margin-right: 5px;
+.buttonTemp{
+    border-radius: 50%;
+    padding: 12px;
+    border: none;
+    margin-right: 5px;
+    background-color: var(--hover-blue);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    color: #eee;
 }
 
-.buttonF {
-
-border-radius: 50%;
-padding: 4px;
-margin-right: 20px;
+.buttonTemp.active {
+    background-color: var(--white-color);
+    color: #111;
 }
 
 .container {
     display: grid;
     grid-template-columns: 30% 70%; 
-    /* width: 100%; */
-    height: 80vh; 
+    height: 100vh;
 }
 
 .buscador {
-
-background-color:#1E213A;
-background-image: url(./img-design/Cloud-background.png) ;
-background-repeat: no-repeat;
-background-position: 0% 15%;
-/* background-attachment: fixed; */
-background-size: 100% 30%;
-display: flex;
-flex-direction: column;
-align-items: center;
-
+    background-color: var(--blue-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
 
@@ -117,16 +135,24 @@ font-size: 30px;
 }
 
 .buscador_output_img {
+    padding: 40px 0;
+    background-image: url(./img-design/Cloud-background.png) ;
+    background-color: var(--blue-color);
+    background-blend-mode: overlay;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
-padding-top: 40px;
-
+.weather_country-image {
+    width: 148px;
 }
 
 .buscador_output_number_temp {
-
-font-size: 55px;
-color: white;
-font-weight: bold;
+    font-size: 55px;
+    font-weight: bold;
 }
 
 .buscador_output_number_unit {
@@ -136,9 +162,8 @@ font-weight: bold;
 }
 
 .buscador_output_weather {
-
-padding-top: 40px;
-color: white;
+    padding-top: 40px;
+    font-size: 22px;
 }
 
 .output_data_week {
@@ -154,44 +179,39 @@ padding-top: 30px;
 display: flex;
 flex-direction: column;
 align-items: center;
-background-color: #1E213A;
-padding: 10px 0px;
-color: white;
+background-color: var(--blue-color);
+padding: 10px;
 }
 
-.output_day {
+/* .output_day {
 
  font-size: 14px;   
-}
+} */
 
 .img_day {
-
-width: 50px;
-height: 40px;
-padding-bottom: 10px;
-
+    padding-bottom: 10px;
 }
 
 .output_temp {
 
 display: flex;
 flex-direction: row;
-
+gap: 0 10px;
 }
 
 
-.output_temp p {
-
-font-size: 14px; 
-padding-top: 20px;
+.output_temp > p {
+    padding-top: 20px;
 }
 
+.output_temp p:last-child {
+    color: var(--gray-text-color);
+}
 
 .title {
-
-padding-top: 80px;  
-margin-left: 135px; 
-color: white; 
+    font-size: 18px;
+    padding-top: 80px;  
+    margin-left: 135px; 
 }
 
 .output_data_day {
@@ -214,9 +234,8 @@ color: white;
     display: flex;
     flex-direction: column ;
     align-items: center;
-    background-color:#1E213A;
+    background-color:var(--blue-color);
     padding: 15px;
-    color: white;
 }
 
 .output_button_wind {
@@ -233,16 +252,17 @@ padding-left: 10px;
 }
 
 .button_wind {
- width: 28px;
- height: 28px;
- border-radius: 50%;
- padding: 5px;  
- 
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    padding: 5px;  
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
 }
 
 .output_number_day_number {
 
-color: white;
 padding: 5px;
 font-size: 40px;
 font-weight: bold;
@@ -250,7 +270,6 @@ font-weight: bold;
 
 .output_number_day_unit {
 
-color: white;
 padding: 5px;
 font-size: 30px;
 }
@@ -259,9 +278,8 @@ font-size: 30px;
     display: flex;
     flex-direction: column ;
     align-items: center;
-    background-color:#1E213A;
+    background-color:var(--blue-color);
     padding: 15px;
-    color: white;
 }
 
 .output_visibility {
@@ -271,7 +289,6 @@ font-size: 30px;
     align-items: center;
     background-color:#1E213A;
     padding: 15px; 
-    color: white; 
 }
 
 .output_presure {
@@ -280,12 +297,10 @@ font-size: 30px;
     align-items: center;
     background-color:#1E213A;
     padding: 15px;
-    color: white;
 }
 
 
 .footer {
-
     display: grid;
     grid-template-columns: 30% 70%; 
 
@@ -306,43 +321,34 @@ font-size: 30px;
 
 } 
 
-.footer_buscador_date {
-
-color: white;
-}
-
-
 .footer_buscador_place {
-
-padding-bottom: 20px;
-color: white;
+    padding-bottom: 20px;
 }
 
 .footer_output {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-display: flex;
-justify-content: center;
-align-items: center;
+.created {
+    text-align: center;
+    margin: 20px 0;
 }
 
 
 @media only screen and (max-width: 600px) {
 
     .header {
-
         display: grid;
         grid-template-columns: 100%; 
     }
     
   
     .container {
-
-     /* display: flex;
-     flex-direction: column; */
-
         display: grid;
         grid-template-columns: 100%; 
-       
+        height: unset;
     } 
 
 
