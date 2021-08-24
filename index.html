@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather app</title>
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="shortcut icon" href="img-design/Clear.png" />
+        <script src="index.js" type="module"></script>
+    </head>
+    <body class="contenedor_principal">
+        <section class="container">
+            <section class="buscador">
+                <div class="header_buscador">
+                    <button class="buttonS" type="button" id="searchPlaces">
+                        Search for Places
+                    </button>
+                    <div>
+                        <button class="buttonGPS">
+                            <img src="img-design/gps-icon.svg" alt="activar geolocalización">
+                        </button>
+                    </div>
+                </div>
+                <div class="buscador_output_img">
+                    <img
+                        src="./img-design/HeavyRain.png"
+                        alt=""
+                        id="weatherImage"
+                        class="weather_country-image"
+                    />
+                </div>
+
+                <section class="buscador_output">
+                    <div class="buscador_output_number">
+                        <p class="buscador_output_number_temp" id="currentTemp">
+                            0.0
+                        </p>
+                    </div>
+
+                    <div class="">
+                        <p class="buscador_output_weather" id="weatherStatus">
+                            Shower
+                        </p>
+                    </div>
+                </section>
+                <div class="footer_buscador">
+                    <div class="footer_buscador_date">
+                        <p class="" id="currentDay"></p>
+                    </div>
+
+                    <div class="footer_buscador_place">
+                        <p class="" id="city">Helsinki</p>
+                    </div>
+                </div>
+
+                <section class="findCountry" id="findCountry">
+                    <div class="close" id="closeSearchMenu">
+                        <img src="img-design/close-icon.svg" alt="cerra menu">
+                    </div>
+                    <form class="find" id="form-find">
+                        <input class="inputLocation" autocomplete="off" id="inputLocation" type="text" placeholder="Search location" />
+                        <button class="search" type="submit">Search</button>
+                    </form>
+                    <div class="countries" id="countries">
+                    </div>
+                </section>
+            </section>
+
+            <section class="output">
+                <div class="header_output">
+                    <div class="header_output_button">
+                        <button class="buttonTemp" data-unit="metric">°C</button>
+                        <button class="buttonTemp" data-unit="imperial">°F</button>
+                    </div>
+                </div>
+                <section class="output_data_week">
+                    <div class="output_data_week_container">
+                        <p class="output_day" id="next-day-1">Tomorrow</p>
+                        <img
+                            class="img_day"
+                            src="./img-design/HeavyCloud.png"
+                            id="img1"
+                            alt=""
+                        />
+                        <div class="output_temp">
+                            <p class="" id="max-temp-next-day-1">°C</p>
+                            <p class="" id="min-temp-next-day-1">°C</p>
+                        </div>
+                    </div>
+
+                    <div class="output_data_week_container">
+                        <p class="output_day" id="next-day-2">Tomorrow</p>
+                        <img
+                            class="img_day"
+                            src="./img-design/HeavyCloud.png"
+                            id="img2"
+                            alt=""
+                        />
+                        <div class="output_temp">
+                            <p class="" id="max-temp-next-day-2">°C</p>
+                            <p class="" id="min-temp-next-day-2">°C</p>
+                        </div>
+                    </div>
+
+                    <div class="output_data_week_container">
+                        <p class="output_day" id="next-day-3">Tomorrow</p>
+                        <img
+                            class="img_day"
+                            src="./img-design/HeavyCloud.png"
+                            id="img3"
+                            alt=""
+                        />
+                        <div class="output_temp">
+                            <p class="" id="max-temp-next-day-3">°C</p>
+                            <p class="" id="min-temp-next-day-3">°C</p>
+                        </div>
+                    </div>
+
+                    <div class="output_data_week_container">
+                        <p class="output_day" id="next-day-4">Tomorrow</p>
+                        <img
+                            class="img_day"
+                            src="./img-design/HeavyCloud.png"
+                            id="img4"
+                            alt=""
+                        />
+                        <div class="output_temp">
+                            <p class="" id="max-temp-next-day-4">°C</p>
+                            <p class="" id="min-temp-next-day-4">°C</p>
+                        </div>
+                    </div>
+
+                    <div class="output_data_week_container">
+                        <p class="output_day" id="next-day-5">Tomorrow</p>
+                        <img
+                            class="img_day"
+                            src="./img-design/HeavyCloud.png"
+                            id="img5"
+                            alt=""
+                        />
+                        <div class="output_temp">
+                            <p class="" id="max-temp-next-day-5">°C</p>
+                            <p class="" id="min-temp-next-day-5">°C</p>
+                        </div>
+                    </div>
+                </section>
+
+                <h3 class="title">Today's Hightlights</h3>
+
+                <section class="output_data_day">
+                    <div class="output_wind">
+                        <p>Wind status</p>
+                        <div class="output_number_day">
+                            <p class="output_number_day_number" id="windStatus">
+                                0
+                            </p>
+                            <!-- <p class="output_number_day_unit">mph</p> -->
+                        </div>
+                        <div class="output_button_wind">
+                            <button class="button_wind">
+                                <svg width="14" height="14" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.4675 3.02402C9.33295 1.62189 9.27645 62.0826 10.7927 60.9852C10.7927 60.9852 33.4919 40.8997 53.3536 18.5186C58.82 12.3588 27.8171 17.3708 27.8171 17.3708L16.4675 3.02402Z" fill="#E7E7EB" stroke="#E7E7EB"/>
+                                </svg>                                    
+                            </button>
+                            <p>wsw</p>
+                        </div>
+                    </div>
+
+                    <div class="output_humidity">
+                        <p>Humidity</p>
+                        <div class="output_number_day">
+                            <p class="output_number_day_number" id="humidity">
+                                0
+                            </p>
+                            <progress value="70" max="100" id="progressBar">
+                                70 %
+                            </progress>
+                        </div>
+                    </div>
+
+                    <div class="output_visibility">
+                        <p>Visibility</p>
+                        <div class="output_number_day">
+                            <p class="output_number_day_number" id="visibility">
+                                0
+                            </p>
+                            <!-- <p class="output_number_day_unit">miles</p> -->
+                        </div>
+                    </div>
+
+                    <div class="output_presure">
+                        <p>Air pressure</p>
+                        <div class="output_number_day">
+                            <p
+                                class="output_number_day_number"
+                                id="airPressure"
+                            >
+                                0
+                            </p>
+                            <!-- <p class="output_number_day_unit">mb</p> -->
+                        </div>
+                    </div>
+                </section>
+                <div class="created">
+                    <small>Created by Rodrigo and Miguel</small>
+                </div>
+            </section>
+        </section>
+    </body>
+</html>
