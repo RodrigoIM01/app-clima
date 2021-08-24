@@ -13,13 +13,13 @@
             rel="stylesheet"
         />
         <link rel="shortcut icon" href="img-design/Clear.png" />
+        <script src="index.js" type="module"></script>
     </head>
-
     <body class="contenedor_principal">
         <section class="container">
             <section class="buscador">
                 <div class="header_buscador">
-                    <button class="buttonS" type="button">
+                    <button class="buttonS" type="button" id="searchPlaces">
                         Search for Places
                     </button>
                     <div>
@@ -59,13 +59,25 @@
                         <p class="" id="city">Helsinki</p>
                     </div>
                 </div>
+
+                <section class="findCountry" id="findCountry">
+                    <div class="close" id="closeSearchMenu">
+                        <img src="img-design/close-icon.svg" alt="cerra menu">
+                    </div>
+                    <form class="find" id="form-find">
+                        <input class="inputLocation" autocomplete="off" id="inputLocation" type="text" placeholder="Search location" />
+                        <button class="search" type="submit">Search</button>
+                    </form>
+                    <div class="countries" id="countries">
+                    </div>
+                </section>
             </section>
 
             <section class="output">
                 <div class="header_output">
                     <div class="header_output_button">
-                        <button class="buttonTemp active" type="button">°C</button>
-                        <button class="buttonTemp" type="button">°F</button>
+                        <button class="buttonTemp" data-unit="metric">°C</button>
+                        <button class="buttonTemp" data-unit="imperial">°F</button>
                     </div>
                 </div>
                 <section class="output_data_week">
@@ -201,7 +213,5 @@
                 </div>
             </section>
         </section>
-        <script src="events.js"></script>
-        <script src="index.js" type="module"></script>
     </body>
 </html>

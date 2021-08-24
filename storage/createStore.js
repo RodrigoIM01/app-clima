@@ -12,7 +12,7 @@ class StorageCode {
         this.storage = JSON.parse(state);
     }   
 
-    async dispatch (action) {
+    dispatch (action) {
         const state = JSON.stringify(this.reducer(this.getStore(), action));
         this.updateStore(state)
     }

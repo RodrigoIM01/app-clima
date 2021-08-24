@@ -12,18 +12,23 @@
     --default-size-text: 12px;
     --blue-color: #1E213A;
     --hover-blue: #585676;
-    --shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);;
+    --shadow:  0px 4px 4px rgba(0, 0, 0, 0.25);
+    --blue-btn-color: #3C47E9;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: blue;
 }
 
 body {
     font-family: "Space Mono", Arial, sans-serif;
     color: var(--white-color);
     font-size: var(--default-size-text);
-}
-
-.header {
-    display: grid;
-    grid-template-columns: 30% 70%; 
 }
 
 .header_buscador {
@@ -101,19 +106,95 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    overflow-x: hidden;
+    position: relative;
 }
 
+.findCountry {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #1E213A;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 16px 34px;
+    transform: translateX(-100%);
+}
+
+.findCountry.active {
+    transform: translateX(0);
+}
+
+.close {
+    align-self: flex-end;
+    font-size: 24px;
+    cursor: pointer;
+    color: #eee;
+}
+
+.find {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    width: 100%;
+}
+
+.inputLocation {
+    padding: 14px 12px;
+    font-size: 12px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid var(--white-color);
+    width: 78%;
+    color: #eee;
+}
+
+.search {
+    background-color: var(--blue-btn-color);
+    color: #eee;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+}
+
+.countries {
+    width: 100%;
+    margin-top: 40px;
+}
+
+.countrySuggestion {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px;
+    font-size: 12px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: border 0.17s ease;
+}
+
+.countrySuggestion + .countrySuggestion {
+    margin-top: 12px;
+}
+
+.countrySuggestion:hover {
+    border: 1px solid var(--white-color);
+}
+
+.countrySuggestionArrow {
+    transition: color 0.17s ease;
+    color: transparent;
+}
+
+.countrySuggestion:hover .countrySuggestionArrow {
+    color: #eee;
+}
 
 .output {
 
 background-color: #100E1D;
-
-}
-
-.buscador {
-
-display: flex;
-flex-direction: column;
 
 }
 
@@ -139,6 +220,7 @@ font-size: 30px;
     background-image: url(./img-design/Cloud-background.png) ;
     background-color: var(--blue-color);
     background-blend-mode: overlay;
+    background-position: center;
     background-size: cover;
     width: 100%;
     display: flex;
@@ -262,10 +344,9 @@ padding-left: 10px;
 }
 
 .output_number_day_number {
-
-padding: 5px;
-font-size: 40px;
-font-weight: bold;
+    padding: 5px;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .output_number_day_unit {
@@ -333,7 +414,31 @@ font-size: 30px;
 
 .created {
     text-align: center;
-    margin: 20px 0;
+    padding: 20px 0;
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 40% 60%;
+    }
+    
+    .title {
+        font-size: 18px;
+    }
+
+    .output {
+        padding: 0 28px;
+    }
+
+    .output_number_day_number {
+        font-size: 24px;
+    }
+
+    .output_data_week {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
 }
 
 
